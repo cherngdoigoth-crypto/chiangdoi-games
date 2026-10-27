@@ -8,7 +8,7 @@ export class ApiFailure extends Error {
   constructor(public code: string, message: string, public extra?: unknown) { super(message); }
 }
 
-export async function api<T = unknown>(action: string, payload: Record<string, unknown> = {}, token?: string | null, timeoutMs = 30000): Promise<T> {
+export async function api<T = unknown>(action: string, payload: Record<string, unknown> = {}, token?: string | null, timeoutMs = action === 'system.reset' ? 180000 : 30000): Promise<T> {
   if (!API_URL) throw new ApiFailure('NO_CONFIG', 'ยังไม่ได้ตั้งค่า VITE_API_URL (ดู README)');
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);

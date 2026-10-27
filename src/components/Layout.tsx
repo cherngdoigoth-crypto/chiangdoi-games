@@ -64,6 +64,7 @@ const STAFF_NAV: { to: string; label: string; show: (r: Role) => boolean; end?: 
   { to: '/staff/publication', label: 'เผยแพร่ผล', show: isAdmin },
   { to: '/staff/users', label: 'ผู้ใช้งาน', show: isAdmin },
   { to: '/staff/reports', label: 'รายงาน', show: (r) => r !== 'viewer' },
+  { to: '/staff/system', label: 'รีเซ็ตระบบ', show: (r) => r === 'superadmin' },
 ];
 
 function StaffShell({ children }: { children?: ReactNode }) {

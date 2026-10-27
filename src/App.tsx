@@ -17,6 +17,7 @@ import Publication from './pages/staff/Publication';
 import Users from './pages/staff/Users';
 import Reports from './pages/staff/Reports';
 import Account from './pages/staff/Account';
+import System from './pages/staff/System';
 
 export default function App() {
   return (
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="users" element={<RequireRole allow={isAdmin}><Users /></RequireRole>} />
           <Route path="reports" element={<Reports />} />
           <Route path="account" element={<Account />} />
+          <Route path="system" element={<RequireRole allow={(r) => r === 'superadmin'}><System /></RequireRole>} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

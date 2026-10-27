@@ -15,7 +15,7 @@ const ACTION_LABEL: Record<string, string> = {
   'workflow.open': 'เปิดรับคะแนน', 'workflow.submit': 'ส่งผล', 'workflow.return': 'ส่งกลับแก้ไข', 'workflow.reject': 'ปฏิเสธ', 'workflow.approve': 'อนุมัติ',
   'workflow.publish': 'ประกาศผล', 'workflow.unpublish': 'ยกเลิกประกาศ', 'workflow.lock': 'ล็อกผล', 'workflow.unlock': 'ปลดล็อก', 'workflow.reopen': 'เปิดแก้ไขอีกครั้ง',
   'competitions.update': 'แก้ไขรายการ', 'competitions.create': 'สร้างรายการ', 'criteria.update': 'แก้เกณฑ์', 'criteria.confirm': 'ยืนยันเกณฑ์', 'assignments.set': 'มอบหมายผู้รับผิดชอบ',
-  'settings.update': 'แก้การตั้งค่าเผยแพร่', 'users.create': 'สร้างผู้ใช้', 'users.update': 'แก้ผู้ใช้', 'users.resetPassword': 'รีเซ็ตรหัสผ่าน', 'auth.login': 'เข้าสู่ระบบ', 'auth.changePassword': 'เปลี่ยนรหัสผ่าน', 'auth.locked': 'บัญชีถูกล็อก', 'system.seed': 'สร้างข้อมูลตั้งต้น',
+  'settings.update': 'แก้การตั้งค่าเผยแพร่', 'users.create': 'สร้างผู้ใช้', 'users.update': 'แก้ผู้ใช้', 'users.resetPassword': 'รีเซ็ตรหัสผ่าน', 'auth.login': 'เข้าสู่ระบบ', 'auth.changePassword': 'เปลี่ยนรหัสผ่าน', 'auth.locked': 'บัญชีถูกล็อก', 'system.seed': 'สร้างข้อมูลตั้งต้น', 'system.reset': 'รีเซ็ตระบบ',
 };
 export const actionLabel = (a: string) => ACTION_LABEL[a] ?? a;
 
