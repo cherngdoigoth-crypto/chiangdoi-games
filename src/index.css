@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-turf text-ink font-sans antialiased; }
+  h1, h2, h3 { @apply font-display; text-wrap: balance; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-field; }
+  .tabular { font-variant-numeric: tabular-nums; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-turf disabled:cursor-not-allowed disabled:opacity-50; min-height: 44px; }
+  .btn-primary { @apply border-field bg-field text-white hover:bg-field-dark; }
+  .btn-danger { @apply border-danger bg-danger text-white hover:opacity-90; }
+  .btn-ghost { @apply border-transparent bg-transparent hover:bg-white; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; min-height: 34px; }
+  .btn-lg { @apply px-6 py-4 text-base; min-height: 56px; }
+  .input { @apply w-full rounded-xl border border-line bg-white px-3 py-2.5 text-base text-ink placeholder:text-muted/60 focus:border-field focus:outline-none focus:ring-2 focus:ring-field/20 disabled:bg-turf; }
+  .label { @apply mb-1 block text-sm font-medium text-ink; }
+  .card { @apply rounded-2xl border border-line bg-white; }
+  .badge { @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .tbl { @apply w-full border-collapse text-sm; }
+  :where(.tbl) th { @apply whitespace-nowrap border-b border-line bg-turf px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-muted; }
+  :where(.tbl) td { @apply border-b border-line px-3 py-2.5 align-middle; }
+  :where(.tbl) tr:last-child td { @apply border-b-0; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-wider text-muted; }
+}
+
+/* จอแสดงผลสาธารณะ: ตัวอักษรปรับตามขนาดจอ */
+.display-root { font-size: clamp(14px, 1.15vw, 34px); }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .card { border-color: #bbb; break-inside: avoid; }
+  .print-only { display: block !important; }
+  @page { size: A4; margin: 12mm; }
+}
+.print-only { display: none; }
